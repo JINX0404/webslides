@@ -116,13 +116,17 @@ export default function Presentation() {
       </div>
 
       {/* Section 1: Opening Vision */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 via-gray-50 to-white relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: 'url("/images/marble-bg.webp")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }}
         />
+        <div className="absolute inset-0 bg-white/80"></div>
         
         <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
           <div className={`transition-all duration-1500 ${isVisible[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
@@ -147,13 +151,55 @@ export default function Presentation() {
               あらゆる<span className="text-yellow-500 font-normal">"今"</span>を　未来に残す
             </h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
               <div className="text-white/80 text-lg font-light">測量・地理空間</div>
               <div className="text-white/80 text-lg font-light">建築・都市計画</div>
               <div className="text-white/80 text-lg font-light">公共安全</div>
               <div className="text-white/80 text-lg font-light">エネルギー・鉱業</div>
               <div className="text-white/80 text-lg font-light">文化財・歴史継承</div>
               <div className="text-white/80 text-lg font-light">不動産・施設管理</div>
+            </div>
+            
+            <div className="mt-8 mb-8 bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-light mb-6 text-yellow-500">僕らの今やっていること</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">📷</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-yellow-500 mb-1">共同研究開発・論文制作</h4>
+                    <p className="text-gray-300">3Dおよび4Dに関するガウシアンスプラットの共同研究開発</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">🌏</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-yellow-500 mb-1">海外の商材をローカライズ日本で展開</h4>
+                    <p className="text-gray-300">いち早く海外の商材を見つけて日本で展開</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">🏢</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-yellow-500 mb-1">コンテンツ制作支援・スキャンの提供</h4>
+                    <p className="text-gray-300">様々な分野でのスキャン技術の提供</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">🤖</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-yellow-500 mb-1">他業種連携・技術顧問・開発</h4>
+                    <p className="text-gray-300">AIやXRをこれから活用していきたい会社への技術顧問</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -204,10 +250,7 @@ export default function Presentation() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className={`bg-white/5 backdrop-blur-sm border border-yellow-600/20 rounded-lg p-8 transform transition-all duration-700 delay-200 hover:bg-white/10 ${isVisible[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded mb-6 flex items-center justify-center overflow-hidden">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🎮</div>
-                  <span className="text-gray-400 text-sm">Epic Games / Fortnite</span>
-                </div>
+                <img src="/images/profile.png" alt="今井翔太" className="w-32 h-32 rounded-full object-cover" />
               </div>
               <h3 className="text-xl font-light mb-3 text-yellow-500">SVA, VFX, Epic Games</h3>
               <p className="text-gray-400 font-light">NYで学んだCG/VFX、Fortnite日本展開をリード</p>
@@ -465,6 +508,8 @@ export default function Presentation() {
                 </span>
               </blockquote>
             </div>
+            
+            <img src="/images/uphash-logo.png" alt="UPHASH" className="h-16 mx-auto mb-8" />
             
             <div className={`transition-all duration-1000 delay-500 ${isVisible[7] ? 'opacity-100' : 'opacity-0'}`}>
               <p className="text-2xl text-gray-700 mb-2 font-light">Thank you</p>
