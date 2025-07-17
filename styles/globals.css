@@ -2,53 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'reveal.js/dist/reveal.css';
-@import 'reveal.js/dist/theme/white.css';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.reveal {
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-  font-weight: 600;
-  text-transform: none;
+/* Smooth scrolling for sections */
+section {
+  scroll-snap-align: start;
+  position: relative;
 }
 
-.reveal .slides section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+  }
 }
 
-.reveal pre {
-  box-shadow: none;
-  border-radius: 0.5rem;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.reveal code {
-  border-radius: 0.25rem;
-  padding: 0.2em 0.4em;
-  background-color: #f3f4f6;
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
 }
 
-.gradient-bg {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
 }
 
-.title-slide h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
 }
 
-.title-slide p {
-  font-size: 1.5rem;
-  opacity: 0.9;
+/* Animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
 }
