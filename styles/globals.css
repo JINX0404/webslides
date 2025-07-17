@@ -19,10 +19,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Fullscreen mode styles */
+:fullscreen {
+  background: #000;
+}
+
+:-webkit-full-screen {
+  background: #000;
+}
+
+:-moz-full-screen {
+  background: #000;
+}
+
+:-ms-fullscreen {
+  background: #000;
+}
+
+/* Ensure 16:9 aspect ratio in fullscreen */
+:fullscreen section,
+:-webkit-full-screen section,
+:-moz-full-screen section,
+:-ms-fullscreen section {
+  max-width: 177.77vh; /* 16:9 ratio */
+  max-height: 56.25vw; /* 16:9 ratio */
+  margin: auto;
+}
+
 /* Smooth scrolling for sections */
 section {
   scroll-snap-align: start;
   position: relative;
+  min-height: 100vh;
 }
 
 /* Mobile menu styles */
@@ -66,6 +94,93 @@ section {
   }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out;
+}
+
+/* Delay classes for staggered animations */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
 }
