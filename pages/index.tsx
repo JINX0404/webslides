@@ -24,17 +24,19 @@ export default function Presentation() {
       setActiveSection(currentSection)
 
       // Trigger animations for visible sections
-      const newVisibility = [...isVisible]
-      for (let i = 0; i <= currentSection + 1; i++) {
-        newVisibility[i] = true
-      }
-      setIsVisible(newVisibility)
+      setIsVisible(prev => {
+        const newVisibility = [...prev]
+        for (let i = 0; i <= currentSection + 1; i++) {
+          newVisibility[i] = true
+        }
+        return newVisibility
+      })
     }
 
     handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [sections.length])
 
   const scrollToSection = (index: number) => {
     window.scrollTo({
